@@ -1,6 +1,7 @@
 # hello-maven-plugin
 http://maven.apache.org/plugin-developers/index.html
 http://maven.apache.org/guides/plugin/guide-java-plugin-development.html
+http://maven.apache.org/developers/mojo-api-specification.html
 
 # mvn
 mvn eclipse:eclipse -DdownloadSources=true
@@ -33,6 +34,14 @@ mvn deploy
 
 <version>1.0</version>
 mvn deploy
+
+# Mojo archetype [optional]
+mvn archetype:generate \
+  -DgroupId=sample.plugin \
+  -DartifactId=hello-maven-plugin \
+  -Dversion=1.0 \
+  -DarchetypeGroupId=org.apache.maven.archetypes \
+  -DarchetypeArtifactId=maven-archetype-plugin
 
 # Your First Mojo
 mvn dependency:purge-local-repository -DmanualInclude="yhli.maven.plugin:hello-maven-plugin"
