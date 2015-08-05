@@ -1,0 +1,29 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>yhli.maven.test</groupId>
+	<artifactId>simple</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+
+	<name>Attaching the Mojo to the Build Lifecycle: $mvn compile</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>yhli.maven.plugin</groupId>
+				<artifactId>hello-maven-plugin</artifactId>
+				<version>1.0</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>sayhi</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

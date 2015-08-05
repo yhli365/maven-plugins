@@ -1,0 +1,59 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>yhli.maven.test</groupId>
+	<artifactId>simple</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+
+	<name>Parameters</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>yhli.maven.plugin</groupId>
+				<artifactId>hello-maven-plugin</artifactId>
+				<version>1.0</version>
+				<configuration>
+					<greeting>Welcome</greeting>
+					<!-- Parameter Types With One Value -->
+					<myBoolean>true</myBoolean>
+					<myInteger>10</myInteger>
+					<myDouble>1.5</myDouble>
+					<myDate>2005-10-06 2:22:55.1 PM</myDate>
+					<myFile>c:\temp</myFile>
+					<myURL>http://maven.apache.org</myURL>
+					<myText>my name?</myText>
+					<myColor>RED</myColor>
+					<!-- Parameter Types With Multiple Values -->
+					<myArray>
+						<param>value1</param>
+						<param>value2</param>
+					</myArray>
+					<myList>
+						<param>value1</param>
+						<param>value2</param>
+					</myList>
+					<myMap>
+						<key1>value1</key1>
+						<key2>value2</key2>
+					</myMap>
+					<myProperties>
+						<property>
+							<name>propertyName1</name>
+							<value>propertyValue1</value>
+						</property>
+						<property>
+							<name>propertyName2</name>
+							<value>propertyValue2</value>
+						</property>
+					</myProperties>
+					<myObject>
+						<myField>test</myField>
+					</myObject>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
