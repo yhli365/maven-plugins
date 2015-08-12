@@ -56,12 +56,17 @@ cd src\test\resources\lifecycle
 mvn compile
 
 --Parameters
-mvn hello:sayhi -Dgreeting=baby
 mvn hello:sayhi
 mvn hello:echo
+mvn hello:sayhi -Dgreeting=baby
+mvn hello:sayhi -Dgreeting=error
+mvn hello:sayhi -Dgreeting=fail
 
 cd src\test\resources\parameters
 mvn hello:sayhi
 mvn hello:echo
+
+# maven setting
+mvn hello:config
 
 

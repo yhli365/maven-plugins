@@ -1,10 +1,13 @@
 <project>
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>yhli.maven.plugin</groupId>
-	<artifactId>hello-maven-plugin</artifactId>
-	<version>1.0</version><!-- 1.0-SNAPSHOT -->
+	<artifactId>yrepo-maven-plugin</artifactId>
+	<!-- version: 1.0-SNAPSHOT -->
+	<version>1.0</version>
 	<packaging>maven-plugin</packaging>
-	<name>Sample Maven Plugin</name>
+
+	<name>YRepo Maven Plugin</name>
 
 	<properties>
 		<!-- plugin -->
@@ -28,11 +31,6 @@
 			<version>3.4</version>
 			<scope>provided</scope>
 		</dependency>
-
-		<!-- just for demo -->
-		<!-- <dependency> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-dependency-plugin</artifactId> 
-			<version>2.10</version> <scope>test</scope> <exclusions> <exclusion> <groupId>*</groupId> 
-			<artifactId>*</artifactId> </exclusion> </exclusions> </dependency> -->
 	</dependencies>
 
 	<build>
@@ -42,8 +40,6 @@
 				<artifactId>maven-plugin-plugin</artifactId>
 				<version>3.4</version>
 				<configuration>
-					<!-- Specifying a Plugin's Prefix -->
-					<!-- <goalPrefix>hello</goalPrefix> -->
 					<skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
 				</configuration>
 				<executions>
@@ -56,6 +52,7 @@
 				</executions>
 			</plugin>
 
+			<!-- compiler -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

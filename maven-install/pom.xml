@@ -1,0 +1,22 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>yhli.maven</groupId>
+	<artifactId>maven-install</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+
+	<name>Maven Install</name>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>conf</directory>
+			</resource>
+			<resource>
+				<directory>conf_orig</directory>
+			</resource>
+		</resources>
+	</build>
+
+</project>
