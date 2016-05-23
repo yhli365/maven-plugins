@@ -14,6 +14,7 @@ import org.apache.maven.plugin.logging.Log;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.codehaus.plexus.util.FileUtils;
+import org.codehaus.plexus.util.StringUtils;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -116,7 +117,7 @@ public class EclipseMojo extends AbstractMojo {
 			libCount++;
 			ce.dstPath = "lib/" + dst.getName();
 
-			if (shareSources) {
+			if (shareSources && StringUtils.isNotBlank(ce.sourcepath)) {
 				src = newRepoFile(repoDir, ce.sourcepath);
 				if (src.exists()) {
 					dst = new File(sourcedir, src.getName());
