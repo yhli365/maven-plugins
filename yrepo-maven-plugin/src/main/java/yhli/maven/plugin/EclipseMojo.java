@@ -132,11 +132,13 @@ public class EclipseMojo extends AbstractMojo {
 			log.info("Copy " + srcCount + " dependency source files.");
 		}
 		File dstFile = new File(dstdir, ".classpath");
-		writeClasspathFile(dstFile, f, entries);
+		writeClasspathFile(dstFile, f, entries, true);
+		File dstFile2 = new File(dstdir, ".classpath2");
+		writeClasspathFile(dstFile2, f, entries, false);
 		log.info("Generate .classpath file ok.");
 	}
 
-	private void writeClasspathFile(File dstFile, File srcFile, List<ClasspathEntry> classpaths)
+	private void writeClasspathFile(File dstFile, File srcFile, List<ClasspathEntry> classpaths, boolean hasSourceJar)
 			throws IOException, JDOMException {
 		Element eClasspath = new Element("classpath");
 
@@ -160,7 +162,7 @@ public class EclipseMojo extends AbstractMojo {
 				Element e = new Element("classpathentry");
 				e.setAttribute("kind", "lib");
 				e.setAttribute("path", ce.dstPath);
-				if (ce.dstSourcePath != null) {
+				if (hasSourceJar && ce.dstSourcePath != null) {
 					e.setAttribute("sourcepath", ce.dstSourcePath);
 				}
 				eClasspath.addContent(e);
