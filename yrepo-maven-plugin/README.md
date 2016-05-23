@@ -9,4 +9,4 @@ mvn install
 # Mojo Test
 mvn help:describe -Dplugin=yrepo -Ddetail
 mvn yrepo:eclipse
-
+mvn yrepo:eclipse -Dsources=false
